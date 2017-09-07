@@ -229,6 +229,8 @@ public slots:
     /** DBus slot that returns the number of sessions in the current view. */
     Q_SCRIPTABLE int sessionCount();
 
+	Q_SCRIPTABLE QStringList sessionList();
+
     /** DBus slot that returns the current (active) session window */
     Q_SCRIPTABLE int currentSession();
 
