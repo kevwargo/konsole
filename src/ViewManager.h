@@ -275,6 +275,10 @@ public slots:
     /** DBus slot that sets ALL tabs' width to match their text */
     Q_SCRIPTABLE void setTabWidthToText(bool);
 
+    /** DBus slot that sets the current (active) session window */
+    Q_SCRIPTABLE void setCurrentSession(int sessionId);
+
+
 private slots:
     // called when the "Split View Left/Right" menu item is selected
     void splitLeftRight();
