@@ -27,6 +27,7 @@
 #include <QCommandLineParser>
 #include <QStandardPaths>
 #include <QDebug>
+#include <QtDBus/QtDBus>
 
 // KDE
 #include <KActionCollection>
@@ -41,16 +42,22 @@
 #include "ViewManager.h"
 #include "SessionController.h"
 #include "WindowSystemInfo.h"
+#include <applicationadaptor.h>
+
 
 using namespace Konsole;
 
 Application::Application(QCommandLineParser &parser) : m_parser(parser)
 {
     _backgroundInstance = 0;
+    // Set up DBus communication
+    new ApplicationAdaptor(this);
+    QDBusConnection::sessionBus().registerObject(QLatin1String("/Application"), this);
 }
 
 Application::~Application()
 {
+    _windows.clear();
     SessionManager::instance()->closeAllSessions();
     ProfileManager::instance()->saveSettings();
 }
@@ -59,7 +66,7 @@ MainWindow* Application::newMainWindow()
 {
     WindowSystemInfo::HAVE_TRANSPARENCY = !m_parser.isSet(QStringLiteral("notransparency"));
 
-    MainWindow* window = new MainWindow();
+    MainWindow* window = new MainWindow(this);
 
     connect(window, &Konsole::MainWindow::newWindowRequest, this, &Konsole::Application::createWindow);
     connect(window, &Konsole::MainWindow::viewDetached, this, &Konsole::Application::detachView);
@@ -492,4 +499,23 @@ void Application::finalizeNewMainWindow(MainWindow* window)
     if (!KonsoleSettings::saveGeometryOnExit())
         window->resize(window->sizeHint());
     window->show();
+}
+
+QStringList Application::windowList()
+{
+    QStringList ids;
+    foreach (MainWindow* mw, _windows) {
+        ids << QString::number(mw->viewManager()->managerId());
+    }
+    return ids;
+}
+
+void Application::addMainWindow(MainWindow* window)
+{
+    _windows.append(window);
+}
+
+void Application::removeMainWindow(MainWindow* window)
+{
+    _windows.removeOne(window);
 }

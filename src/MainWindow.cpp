@@ -58,13 +58,15 @@
 
 using namespace Konsole;
 
-MainWindow::MainWindow()
+MainWindow::MainWindow(Application *mainApp)
     : KXmlGuiWindow()
     , _bookmarkHandler(0)
+    , _mainApp(mainApp)
     , _pluggedController(0)
     , _menuBarInitialVisibility(true)
     , _menuBarInitialVisibilityApplied(false)
 {
+    _mainApp->addMainWindow(this);
     if (!KonsoleSettings::saveGeometryOnExit()) {
         // If we are not using the global Konsole save geometry on exit,
         // remove all Height and Width from [MainWindow] from konsolerc
@@ -122,6 +124,11 @@ MainWindow::MainWindow()
     // this must come at the end
     applyKonsoleSettings();
     connect(KonsoleSettings::self(), &Konsole::KonsoleSettings::configChanged, this, &Konsole::MainWindow::applyKonsoleSettings);
+}
+
+MainWindow::~MainWindow()
+{
+    _mainApp->removeMainWindow(this);
 }
 
 void MainWindow::updateUseTransparency()

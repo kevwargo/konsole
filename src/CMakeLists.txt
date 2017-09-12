@@ -157,14 +157,22 @@ set_target_properties(konsoleprivate PROPERTIES
 
 install(TARGETS konsoleprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
+qt5_generate_dbus_interface(Application.h org.kde.konsole.Application.xml OPTIONS -m)
+qt5_add_dbus_adaptor(applicationadaptors_SRCS
+                    ${CMAKE_CURRENT_BINARY_DIR}/org.kde.konsole.Application.xml
+                    Application.h
+                    Konsole::Application)
+
 set(konsole_KDEINIT_SRCS
+	${applicationadaptors_SRCS}
    Application.cpp
    MainWindow.cpp
    main.cpp
    settings/FileLocationSettings.cpp
    settings/GeneralSettings.cpp
    settings/ProfileSettings.cpp
-   settings/TabBarSettings.cpp)
+   settings/TabBarSettings.cpp
+	${CMAKE_CURRENT_BINARY_DIR}/org.kde.konsole.Application.xml)
 
 kconfig_add_kcfg_files(konsole_KDEINIT_SRCS settings/KonsoleSettings.kcfgc)
 

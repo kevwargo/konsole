@@ -47,6 +47,7 @@ class Session;
 class Application : public QObject
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.konsole.Application")
 
 public:
     /** Constructs a new Konsole application. */
@@ -64,6 +65,9 @@ public:
      */
     MainWindow* newMainWindow();
 
+    void addMainWindow(MainWindow* window);
+    void removeMainWindow(MainWindow* window);
+
 private slots:
     void createWindow(Profile::Ptr profile , const QString& directory);
     void detachView(Session* session);
@@ -72,6 +76,7 @@ private slots:
 
 public slots:
     void slotActivateRequested (const QStringList &args, const QString &workingDir);
+    Q_SCRIPTABLE QStringList windowList();
 
 private:
     void listAvailableProfiles();
@@ -86,6 +91,7 @@ private:
     void finalizeNewMainWindow(MainWindow* window);
 
     MainWindow* _backgroundInstance;
+    QList<MainWindow*> _windows;
     QCommandLineParser &m_parser;
 };
 }

@@ -29,6 +29,7 @@
 
 // Konsole
 #include "Profile.h"
+#include "Application.h"
 
 class QAction;
 class KActionMenu;
@@ -63,7 +64,8 @@ public:
      * Constructs a new main window.  Do not create new main windows directly, use Application's
      * newMainWindow() method instead.
      */
-    MainWindow();
+    MainWindow(Application *mainApp);
+    ~MainWindow();
 
     /**
      * Returns the view manager associated with this window.  The view manager can be used to
@@ -205,6 +207,7 @@ private:
     BookmarkHandler* _bookmarkHandler;
     KToggleAction* _toggleMenuBarAction;
     KActionMenu* _newTabMenuAction;
+    Application* _mainApp;
 
     QPointer<SessionController> _pluggedController;
 
