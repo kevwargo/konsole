@@ -34,6 +34,7 @@
 
 // Konsole
 #include "SessionManager.h"
+#include "Profile.h"
 #include "ProfileManager.h"
 #include "MainWindow.h"
 #include "Session.h"
@@ -528,4 +529,13 @@ QString Application::getWindowByName(const QString& name)
         }
     }
     return QString("");
+}
+
+QString Application::openNewWindow()
+{
+    Profile::Ptr profile = ProfileManager::instance()->defaultProfile();
+    MainWindow* window = newMainWindow();
+    window->createSession(profile, QString("~"));
+    finalizeNewMainWindow(window);
+    return QString::number(window->viewManager()->managerId());
 }
