@@ -77,6 +77,7 @@ private slots:
 public slots:
     void slotActivateRequested (const QStringList &args, const QString &workingDir);
     Q_SCRIPTABLE QStringList windowList();
+    Q_SCRIPTABLE QString getWindowByName(const QString& name);
 
 private:
     void listAvailableProfiles();

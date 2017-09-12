@@ -278,6 +278,9 @@ public slots:
     /** DBus slot that sets the current (active) session window */
     Q_SCRIPTABLE void setCurrentSession(int sessionId);
 
+    Q_SCRIPTABLE QString name();
+    Q_SCRIPTABLE void setName(const QString& name);
+
 
 private slots:
     // called when the "Split View Left/Right" menu item is selected
@@ -391,6 +394,7 @@ private:
     QString _navigationStyleSheet;
 
     int _managerId;
+    QString _name;
     static int lastManagerId;
 };
 }

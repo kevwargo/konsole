@@ -95,6 +95,7 @@ ViewManager::ViewManager(QObject* parent , KActionCollection* collection)
     new WindowAdaptor(this);
 
     _managerId = ++lastManagerId;
+    _name = QString::asprintf("_window_%d", _managerId);
     QDBusConnection::sessionBus().registerObject(QLatin1String("/Windows/") + QString::number(_managerId), this);
 }
 
@@ -1136,3 +1137,12 @@ void ViewManager::setCurrentSession(int sessionId)
     }
 }
 
+QString ViewManager::name()
+{
+    return _name;
+}
+
+void ViewManager::setName(const QString& name)
+{
+    _name = name;
+}

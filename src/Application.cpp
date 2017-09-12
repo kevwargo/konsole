@@ -519,3 +519,13 @@ void Application::removeMainWindow(MainWindow* window)
 {
     _windows.removeOne(window);
 }
+
+QString Application::getWindowByName(const QString& name)
+{
+    foreach(MainWindow* window, _windows) {
+        if (window->viewManager()->name() == name) {
+            return QString::number(window->viewManager()->managerId());
+        }
+    }
+    return QString("");
+}
