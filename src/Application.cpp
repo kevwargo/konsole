@@ -539,3 +539,13 @@ QString Application::openNewWindow()
     finalizeNewMainWindow(window);
     return QString::number(window->viewManager()->managerId());
 }
+
+void Application::raiseWindow(int winId)
+{
+    foreach(MainWindow* window, _windows) {
+        if (window->viewManager()->managerId() == winId) {
+            window->raise();
+            return;
+        }
+    }
+}

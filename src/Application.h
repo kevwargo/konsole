@@ -79,6 +79,7 @@ public slots:
     Q_SCRIPTABLE QStringList windowList();
     Q_SCRIPTABLE QString getWindowByName(const QString& name);
     Q_SCRIPTABLE QString openNewWindow();
+    Q_SCRIPTABLE void raiseWindow(int winId);
 
 private:
     void listAvailableProfiles();
