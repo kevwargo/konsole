@@ -1754,6 +1754,19 @@ bool ViewManager::moveView(int viewId, int targetSplitterId, int idx)
     return true;
 }
 
+void ViewManager::requestActivate()
+{
+    auto mainWindow = qobject_cast<QWidget *>(parent());
+    if (mainWindow == nullptr) {
+        qCDebug(KonsoleDebug) << "ViewManager" << this << "does not belong to MainWindow";
+    } else {
+        qCDebug(KonsoleDebug) << "raising" << mainWindow << "of" << this;
+        mainWindow->show();
+        mainWindow->activateWindow();
+        mainWindow->raise();
+    }
+}
+
 void ViewManager::setNavigationVisibility(NavigationVisibility navigationVisibility)
 {
     if (_navigationVisibility != navigationVisibility) {
