@@ -3,11 +3,11 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=konsole
-pkgver=26.04.1
-pkgrel=1
+pkgver=26.04.2
+pkgrel=2
 arch=(x86_64)
 url='https://apps.kde.org/konsole/'
-pkgdesc='KDE terminal emulator'
+pkgdesc='KDE terminal emulator (custom)'
 license=(GPL-2.0-or-later
          LGPL-2.0-or-later)
 groups=(kde-applications
