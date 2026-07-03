@@ -1,4 +1,5 @@
-.PHONY:
+.PHONY: build
+
 build:
-	tar -caf konsole-clone.tar.zst -C .. --exclude-vcs --exclude-vcs-ignores --exclude pacman .
+	tar -caf konsole-src-worktree.tar.zst -C .. --exclude-vcs --exclude-vcs-ignores --exclude pacman .
 	makepkg --force
