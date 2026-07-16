@@ -7,13 +7,13 @@
 %endif
 
 Name:    konsole
-Summary: KDE Terminal emulator
-Version: 26.04.3
-Release: 1%{?dist}
+Summary: KDE Terminal emulator (custom)
+Version: %{konsole_version}
+Release: %{konsole_release}%{?dist}
 
 License: CC0-1.0 AND GPL-2.0-only AND GPL-2.0-or-later AND GPL-3.0-only AND LGPL-2.0-only AND LGPL-2.1-only AND LGPL-3.0-only AND (GPL-2.0-only OR GPL-3.0-only) AND (LGPL-2.1-only OR LGPL-3.0-only)
 URL:     https://www.kde.org/applications/system/konsole/
-Source0: https://download.kde.org/%{stable_kf6}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Source0: %{name}-%{version}.tar.xz
 
 ## upstreamable patches
 
