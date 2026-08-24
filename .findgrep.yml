@@ -1,3 +1,7 @@
 exclude-paths:
-  pacman:
-    pattern: ./pacman
+  packaging:
+    pattern: ./packaging
+    default: true
+  po:
+    pattern: ./po
+    default: true
