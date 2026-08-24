@@ -28,7 +28,6 @@ class Profile;
 class Session;
 class SessionController;
 class TabbedViewContainer;
-class TabbedViewContainer;
 class TerminalDisplay;
 class ViewProperties;
 class ViewSplitter;
@@ -382,6 +381,9 @@ public Q_SLOTS:
 
     /** DBus slot that move a view to a different position under a specified splitter**/
     Q_SCRIPTABLE bool moveView(int viewId, int targetSplitterId, int idx);
+
+    /** DBus slot that asks window system to activate this window**/
+    Q_SCRIPTABLE void requestActivate();
 
 private Q_SLOTS:
     // called when the "Split View Left/Right" menu item is selected

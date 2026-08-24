@@ -1,0 +1,7 @@
+exclude-paths:
+  packaging:
+    pattern: ./packaging
+    default: true
+  po:
+    pattern: ./po
+    default: true
