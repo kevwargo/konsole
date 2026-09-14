@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=konsole
-pkgver=26.08.0
+pkgver=26.08.1
 pkgrel=1
 arch=(x86_64)
 url='https://apps.kde.org/konsole/'
