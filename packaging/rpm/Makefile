@@ -1,5 +1,5 @@
 ARCH := $(shell uname -m)
-KONSOLE_VERSION := 26.08.0
+KONSOLE_VERSION := 26.08.1
 KONSOLE_RELEASE := 1
 RPM_DIST := $(shell rpm --eval '%{?dist}')
 KONSOLE_RPM_VERSION_ORIG := $(KONSOLE_VERSION)-1$(RPM_DIST)

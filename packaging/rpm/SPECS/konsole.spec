@@ -139,6 +139,9 @@ xvfb-run -a bash -c "%ctest" || :
 
 
 %changelog
+* Wed Sep 09 2026 Steve Cossette <farchord@gmail.com> - 26.08.1-1
+- 26.08.1
+
 * Fri Aug 14 2026 Steve Cossette <farchord@gmail.com> - 26.08.0-1
 - 26.08.0
 
