@@ -7,7 +7,7 @@
 %endif
 
 Name:    konsole
-Summary: KDE Terminal emulator (custom)
+Summary: KDE Terminal emulator (custom@kevwargo)
 Version: %{konsole_version}
 Release: %{konsole_release}%{?dist}
 
@@ -18,6 +18,9 @@ Source0: %{name}-%{version}.tar.xz
 ## upstreamable patches
 
 ## upstream patches
+# Add per-indicator settings for container tab color and terminal footer
+# https://invent.kde.org/utilities/konsole/-/merge_requests/1216
+Patch0:  konsole-add-per-indicator-settings-for-container-tab-color-and-terminal-footer.patch
 
 ## downstream patches
 Patch200: konsole-history_location_default.patch
@@ -139,6 +142,19 @@ xvfb-run -a bash -c "%ctest" || :
 
 
 %changelog
+* Sun Nov 08 2026 Steve Cossette <farchord@gmail.com> - 26.08.3-1
+- 26.08.3
+
+* Thu Nov 05 2026 Jan Grulich <jgrulich@redhat.com> - 26.08.2-2
+- Upstream backport:
+  Add per-indicator settings for container tab color and terminal footer
+
+* Thu Oct 08 2026 Steve Cossette <farchord@gmail.com> - 26.08.2-1
+- 26.08.2
+
+* Wed Sep 09 2026 Steve Cossette <farchord@gmail.com> - 26.08.1-1
+- 26.08.1
+
 * Fri Aug 14 2026 Steve Cossette <farchord@gmail.com> - 26.08.0-1
 - 26.08.0
 

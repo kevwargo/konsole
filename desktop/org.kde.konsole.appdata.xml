@@ -67,6 +67,7 @@
   <summary xml:lang="ca">Feu servir la interfície de la línia d'ordres</summary>
   <summary xml:lang="ca-valencia">Utilitzeu la interfície de la línia d'ordres</summary>
   <summary xml:lang="cs">Použít příkazový řádek</summary>
+  <summary xml:lang="da">Brug kommandolinjen</summary>
   <summary xml:lang="de">Befehlszeilenschnittstelle verwenden</summary>
   <summary xml:lang="el">Χρήση της διεπαφής γραμμής εντολών</summary>
   <summary xml:lang="en-GB">Use the command line interface</summary>
@@ -627,6 +628,7 @@
   </provides>
   <update_contact>konsole-devel_AT_kde.org</update_contact>
   <releases>
+    <release version="26.08.3" date="2026-11-05"/>
     <release version="26.08.2" date="2026-10-08"/>
     <release version="26.08.1" date="2026-09-10"/>
     <release version="26.08.0" date="2026-08-20"/>

@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 02:56+0000\n"
-"PO-Revision-Date: 2026-08-30 09:21+0200\n"
+"POT-Creation-Date: 2026-10-13 03:23+0000\n"
+"PO-Revision-Date: 2026-10-27 12:42+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -947,7 +947,7 @@ msgstr "Émulateur de terminal"
 #, kde-format
 msgctxt "@info:credit"
 msgid "(c) 1997-2022, The Konsole Developers"
-msgstr "(c) 1997 - 2022, Les développeurs de Konsole"
+msgstr "(c) 1997 - 2022, l'équipe de développement de Konsole"
 
 #: main.cpp:369
 #, kde-format
@@ -1320,7 +1320,7 @@ msgstr "Activer le menu"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save Tab Layout..."
-msgstr "Enregistrer une disposition d'onglets..."
+msgstr "Enregistrer la disposition des onglets..."
 
 #: MainWindow.cpp:522
 #, kde-format
@@ -2597,7 +2597,7 @@ msgstr "Confirmer la fermeture"
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Program"
-msgstr "Fermer un programme"
+msgstr "Fermer le programme"
 
 #: session/SessionController.cpp:1193
 #, kde-format
@@ -3967,7 +3967,7 @@ msgctxt "@title:window"
 msgid "Load Tab Layout"
 msgstr "Charger une disposition d'onglets"
 
-#: Vt102Emulation.cpp:3342
+#: Vt102Emulation.cpp:3337
 #, kde-format
 msgid ""
 "No keyboard translator available.  The information needed to convert key "
@@ -4912,7 +4912,7 @@ msgctxt ""
 "separate it from the number value."
 msgid " column"
 msgid_plural " columns"
-msgstr[0] " colonne"
+msgstr[0] " colonne"
 msgstr[1] " colonnes"
 
 #: widgets/EditProfileDialog.cpp:558
@@ -4922,8 +4922,8 @@ msgctxt ""
 "separate it from the number value."
 msgid " row"
 msgid_plural " rows"
-msgstr[0] " ligne"
-msgstr[1] " lignes"
+msgstr[0] " ligne"
+msgstr[1] " lignes"
 
 #: widgets/EditProfileDialog.cpp:568
 #, kde-format
@@ -4965,8 +4965,8 @@ msgstr "Une variable d'environnement par ligne"
 msgctxt "Unit of time"
 msgid " second"
 msgid_plural " seconds"
-msgstr[0] " seconde"
-msgstr[1] " secondes"
+msgstr[0] " seconde"
+msgstr[1] " secondes"
 
 #: widgets/EditProfileDialog.cpp:848
 #, kde-format
@@ -5865,8 +5865,8 @@ msgstr ""
 msgctxt "@label:textbox Unit of scrollback"
 msgid " line"
 msgid_plural " lines"
-msgstr[0] " ligne"
-msgstr[1] " lignes"
+msgstr[0] " ligne"
+msgstr[1] " lignes"
 
 #: widgets/HistorySizeWidget.cpp:57
 #, kde-format
