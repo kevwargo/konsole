@@ -10,9 +10,9 @@ RPMBUILD_DEFINES := $(RPM_DEFINES) \
 	--define "konsole_version $(KONSOLE_VERSION)" \
 	--define "konsole_release $(KONSOLE_RELEASE)"
 
-.PHONY: init build install install-deps
+.PHONY: upstream-sync build install install-deps
 
-init:
+upstream-sync:
 	dnf download --source konsole
 	rpm $(RPM_DEFINES) -ivh konsole-$(KONSOLE_RPM_VERSION_ORIG).src.rpm
 
